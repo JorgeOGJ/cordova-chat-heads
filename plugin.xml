@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-chat-heads"
+    version="0.0.1">
+    <name>cordova-chat-heads</name>
+    <description>Cordova Chat Heads Plugin</description>
+    <license>MIT</license>
+    <author>Aidan Wardman</author>
+    <keywords>cordova,chat,heads</keywords>
+    <platform name="android">
+    </platform>
+</plugin>
