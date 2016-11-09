@@ -9,5 +9,8 @@
     <author>Aidan Wardman</author>
     <keywords>cordova,chat,heads</keywords>
     <platform name="android">
+        <js-module src="www/ChatHeads.js" name="ChatHeads">
+            <clobbers target="ChatHeads" />
+        </js-module>
     </platform>
 </plugin>
