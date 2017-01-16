@@ -23,6 +23,7 @@ public class ChatHeads extends CordovaPlugin {
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+		this.callbackContext = callbackContext;
 		if (action.equals("test")) {
 			String message = args.getString(0);
 			this.test(message, callbackContext);
@@ -52,18 +53,18 @@ public class ChatHeads extends CordovaPlugin {
 	}
 	
 	private void open(String message, CallbackContext callbackContext) {
-		this.addToWindowManager();
+		this.activity.addToWindowManager();
 	}
 	
 	private void close(String message, CallbackContext callbackContext) {
-		this.destroy();
+		this.activity.destroy();
 	}
 	
 	private void startService(String message, CallbackContext callbackContext) {
-		this.startHeadService();
+		this.activity.startHeadService();
 	}
 	
 	private void stopService(String message, CallbackContext callbackContext) {
-		this.stopHeadService();
+		this.activity.stopHeadService();
 	}
 }
