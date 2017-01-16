@@ -3,14 +3,42 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-chat-heads"
     version="0.0.1">
+	
     <name>cordova-chat-heads</name>
+	
     <description>Cordova Chat Heads Plugin</description>
+	
     <license>MIT</license>
+	
     <author>Aidan Wardman</author>
+	
     <keywords>cordova,chat,heads</keywords>
+	
+	<asset src="www/ChatHeads.js" target="js/ChatHeads.js"/>
+	
+	<js-module src="www/ChatHeads.js" name="ChatHeads">
+		<clobbers target="ChatHeads" />
+	</js-module>
+	
     <platform name="android">
-        <js-module src="www/ChatHeads.js" name="ChatHeads">
-            <clobbers target="ChatHeads" />
-        </js-module>
+	
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+		</config-file>
+		
+		<config-file target="config.xml" parent="/*">
+			<feature name="ChatHeads">
+				<param name="android-package" value="co.wardman.chatheads"/>
+			</feature>
+		</config-file>
+
+    	<source-file src="src/android/ChatHeads.java" target-dir="src/co/wardman/chatheads" />
+		<source-file src="src/android/HeadLayer.java" target-dir="src/co/wardman/chatheads" />
+		<source-file src="src/android/HeadService.java" target-dir="src/co/wardman/chatheads" />
+		<source-file src="src/android/MainActivity.java" target-dir="src/co/wardman/chatheads" />
+		<source-file src="src/android/PermissionChecker.java" target-dir="src/co/wardman/chatheads" />
+		<source-file src="src/android/SettingsFragment.java" target-dir="src/co/wardman/chatheads" />
+		
     </platform>
+	
 </plugin>
