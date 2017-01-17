@@ -57,11 +57,11 @@ public class ChatHeads extends CordovaPlugin {
 	//}
 	
 	private void startChatHeads(String message, CallbackContext callbackContext) {
-		settingsfragment = new SettingsFragment(this);
+		this.settingsfragment = new SettingsFragment();
 	}
 	
 	private void openChatHeads(String message, CallbackContext callbackContext) {
-		settingsfragment.startHeadService();
+		this.settingsfragment.startHeadService();
 	}
 	
 	//private void stopService(String message, CallbackContext callbackContext) {
