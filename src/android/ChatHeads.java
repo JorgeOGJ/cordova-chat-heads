@@ -13,23 +13,25 @@ import android.content.Intent;
 */
 public class ChatHeads extends CordovaPlugin {
 	
+	private CallbackContext callbackContext = null;
 	public SettingsFragment settingsfragment = null;
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		this.callbackContext = callbackContext;
+		String message = args.getString(0);
 		if (action.equals("test")) {
-			String message = args.getString(0);
+			//String message = args.getString(0);
 			this.test(message, callbackContext);
 			return true;
 		}else if (action.equals("open")) {
 			//this.open();
 			return true;
 		}else if (action.equals("close")) {
-			//this.open();
+			this.openChatHeads(message,callbackContext);
 			return true;
 		}else if (action.equals("start")) {
-			startChatHeads();
+			this.startChatHeads(message,callbackContext);
 			return true;
 		}else if (action.equals("stop")) {
 			//this.stopHeadService();
