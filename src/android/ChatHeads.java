@@ -6,6 +6,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Intent;
+
 /**
 * This class echoes a string called from JavaScript.
 */
@@ -29,16 +31,16 @@ public class ChatHeads extends CordovaPlugin {
 			this.test(message, callbackContext);
 			return true;
 		}else if (action.equals("open")) {
-			this.open();
+			//this.open();
 			return true;
 		}else if (action.equals("close")) {
-			this.open();
+			//this.open();
 			return true;
 		}else if (action.equals("start")) {
-			this.startChatHeads();
+			startChatHeads();
 			return true;
 		}else if (action.equals("stop")) {
-			this.stopHeadService();
+			//this.stopHeadService();
 			return true;
 		}
 		return false;

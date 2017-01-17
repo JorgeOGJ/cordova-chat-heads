@@ -38,6 +38,7 @@
 		<source-file src="src/android/MainActivity.java" target-dir="src/co/wardman/chatheads" />
 		<source-file src="src/android/PermissionChecker.java" target-dir="src/co/wardman/chatheads" />
 		<source-file src="src/android/SettingsFragment.java" target-dir="src/co/wardman/chatheads" />
+		<source-file src="src/android/ChatHeadService.java" target-dir="src/co/wardman/chatheads" />
 		
     </platform>
 	

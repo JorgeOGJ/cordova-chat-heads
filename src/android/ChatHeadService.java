@@ -1,3 +1,5 @@
+package com.wardman.chatheads;
+
 public class ChatHeadService extends Service {
 
   private WindowManager windowManager;
