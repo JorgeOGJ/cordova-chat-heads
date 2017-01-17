@@ -35,7 +35,7 @@ public class ChatHeads extends CordovaPlugin {
 			this.open();
 			return true;
 		}else if (action.equals("start")) {
-			this.startService();
+			this.startChatHeads();
 			return true;
 		}else if (action.equals("stop")) {
 			this.stopHeadService();
@@ -52,19 +52,19 @@ public class ChatHeads extends CordovaPlugin {
 		}
 	}
 	
-	private void open(String message, CallbackContext callbackContext) {
-		this.activity.addToWindowManager();
+	//private void open(String message, CallbackContext callbackContext) {
+	//	this.activity.addToWindowManager();
+	//}
+	
+	//private void close(String message, CallbackContext callbackContext) {
+	//	this.activity.destroy();
+	//}
+	
+	private void startChatHeads(String message, CallbackContext callbackContext) {
+		startService(new Intent(Main.this, ChatHeadService.class));
 	}
 	
-	private void close(String message, CallbackContext callbackContext) {
-		this.activity.destroy();
-	}
-	
-	private void startService(String message, CallbackContext callbackContext) {
-		this.activity.startHeadService();
-	}
-	
-	private void stopService(String message, CallbackContext callbackContext) {
-		this.activity.stopHeadService();
-	}
+	//private void stopService(String message, CallbackContext callbackContext) {
+	//	this.activity.stopHeadService();
+	//}
 }
