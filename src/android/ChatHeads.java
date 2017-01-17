@@ -13,15 +13,7 @@ import android.content.Intent;
 */
 public class ChatHeads extends CordovaPlugin {
 	
-	private CallbackContext callbackContext = null;
-	private MainActivity activity = null;
-	
-	@Override
-	public void initialize(CordovaInterface cordova, CordovaWebView webView)
-	{
-		super.initialize(cordova,webView);
-		this.activity = (MainActivity) cordova.getActivity();
-	}
+	public SettingsFragment settingsfragment = null;
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -63,7 +55,11 @@ public class ChatHeads extends CordovaPlugin {
 	//}
 	
 	private void startChatHeads(String message, CallbackContext callbackContext) {
-		startService(new Intent(Main.this, ChatHeadService.class));
+		settingsfragment = new SettingsFragment(this);
+	}
+	
+	private void openChatHeads(String message, CallbackContext callbackContext) {
+		settingsfragment.startHeadService();
 	}
 	
 	//private void stopService(String message, CallbackContext callbackContext) {
