@@ -23,7 +23,7 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.settings);
+       // addPreferencesFromResource(R.xml.settings);
         enableHeadServiceCheckbox(false);
 
         mPermissionChecker = new PermissionChecker(getActivity());
@@ -63,7 +63,8 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if(SERVICE_ENABLED_KEY.equals(key)) {
-            boolean enabled = sharedPreferences.getBoolean(key, false);
+            //boolean enabled = sharedPreferences.getBoolean(key, false);
+			boolean enabled = true;
             if(enabled) {
                 startHeadService();
             } else {
@@ -75,6 +76,10 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
     private void enableHeadServiceCheckbox(boolean enabled) {
         getPreferenceScreen().findPreference(SERVICE_ENABLED_KEY).setEnabled(enabled);
     }
+
+	public void externalStartHeadService(){
+		startHeadService();
+	}
 
     private void startHeadService() {
         Context context = getActivity();

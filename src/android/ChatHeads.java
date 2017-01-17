@@ -61,7 +61,7 @@ public class ChatHeads extends CordovaPlugin {
 	}
 	
 	private void openChatHeads(String message, CallbackContext callbackContext) {
-		this.settingsfragment.startHeadService();
+		this.settingsfragment.externalStartHeadService();
 	}
 	
 	//private void stopService(String message, CallbackContext callbackContext) {
