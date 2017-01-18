@@ -1,5 +1,8 @@
 package com.wardman.chatheads;
 
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.LOG;
+
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -16,9 +19,10 @@ public class HeadService extends Service {
     private final static int FOREGROUND_ID = 999;
 
     private HeadLayer mHeadLayer;
+	private CordovaInterface cordova;
 	
 	private int getAppResource(String name, String type) {
-		return mHeadLayer.mContext.getActivity().getResources().getIdentifier(name, type, mHeadLayer.mContext.getActivity().getPackageName());
+		return cordova.getActivity().getResources().getIdentifier(name, type, cordova.getActivity().getPackageName());
 	}
 
     @Override
