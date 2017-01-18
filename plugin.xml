@@ -24,11 +24,12 @@
 	
 		<config-file target="AndroidManifest.xml" parent="/*">
 			<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+			<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="24" />
 		</config-file>
 		
 		<config-file target="config.xml" parent="/*">
 			<feature name="ChatHeads">
-				<param name="android-package" value="co.wardman.chatheads"/>
+				<param name="android-package" value="co.wardman.chatheads.ChatHeads"/>
 			</feature>
 		</config-file>
 
