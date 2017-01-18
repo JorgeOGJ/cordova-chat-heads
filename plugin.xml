@@ -24,14 +24,6 @@
 	
 		<config-file target="AndroidManifest.xml" parent="/*">
 			<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-			<uses-permission android:name="android.permission.INTERNET" />
-			<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="24" />
-			<activity android:name="co.wardman.chatheads" android:label="@string/app_name">
-				<intent-filter android:label="@string/launcher_name">
-					<action android:name="android.intent.action.MAIN" />
-					<category android:name="android.intent.category.LAUNCHER" />
-				</intent-filter>
-			</activity>
 		</config-file>
 		
 		<config-file target="config.xml" parent="/*">

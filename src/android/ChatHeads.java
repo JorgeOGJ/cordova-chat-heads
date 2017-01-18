@@ -18,11 +18,11 @@ public class ChatHeads extends CordovaPlugin {
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		this.callbackContext = callbackContext;
+		//this.callbackContext = callbackContext;
 		String message = args.getString(0);
 		if (action.equals("test")) {
 			//String message = args.getString(0);
-			test(message, callbackContext);
+			this.test(message, callbackContext);
 			return true;
 		}else if (action.equals("open")) {
 			//this.open();
