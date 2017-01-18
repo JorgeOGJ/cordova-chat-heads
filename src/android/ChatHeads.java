@@ -24,6 +24,29 @@ public class ChatHeads extends CordovaPlugin {
 	private CallbackContext callbackContext = null;
 	public SettingsFragment settingsfragment = null;
 	public HeadLayer headlayer = null;
+	
+	// Service that keeps the app awake
+    private ForegroundService service;
+	
+	private enum Event {
+        ACTIVATE, DEACTIVATE, FAILURE
+    }
+
+    // Used to (un)bind the service to with the activity
+    private final ServiceConnection connection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            ForegroundService.ForegroundBinder binder =
+                    (ForegroundService.ForegroundBinder) service;
+
+            ChatHeads.this.service = binder.getService();
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            // Nothing to do here
+        }
+    };
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
