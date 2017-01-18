@@ -58,8 +58,18 @@ public class ChatHeads extends CordovaPlugin {
 	//}
 	
 	private void startChatHeads(String message, CallbackContext callbackContext) {
-		this.settingsfragment = new SettingsFragment();
-		this.settingsfragment.externalStartHeadService();
+		Activity context = cordova.getActivity();
+        Intent intent = new Intent(
+                context, HeadService.class);
+        try {
+            context.bindService(intent,connection, Context.BIND_AUTO_CREATE);
+			fireEvent(Event.ACTIVATE, null);
+			context.startService(intent);
+        } catch (Exception e) {
+            fireEvent(Event.FAILURE, e.getMessage());
+        }
+		//this.settingsfragment = new SettingsFragment();
+		//this.settingsfragment.externalStartHeadService();
 		callbackContext.success("ChatHeads Service Hopefully Started");
 	}
 	
