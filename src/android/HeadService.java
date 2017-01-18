@@ -1,5 +1,6 @@
 package com.wardman.chatheads;
 
+import com.wardman.chatheads.R;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;

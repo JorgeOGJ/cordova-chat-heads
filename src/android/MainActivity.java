@@ -1,5 +1,6 @@
 package com.wardman.chatheads;
 
+import com.wardman.chatheads.R;
 import android.app.Activity;
 import android.os.Bundle;
 

@@ -2,6 +2,7 @@ package com.wardman.chatheads;
 
 import org.apache.cordova.*;
 
+import com.wardman.chatheads.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
