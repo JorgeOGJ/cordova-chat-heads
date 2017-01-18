@@ -1,6 +1,6 @@
 package com.wardman.chatheads;
 
-import com.wardman.chatheads.R;
+import android.R;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.view.Gravity;
