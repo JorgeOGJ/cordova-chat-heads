@@ -1,6 +1,5 @@
-package com.wardman.chatheads;
+package co.wardman.chatheads;
 
-import android.R;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;

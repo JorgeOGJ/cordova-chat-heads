@@ -1,4 +1,4 @@
-package com.wardman.chatheads;
+package co.wardman.chatheads;
 
 import org.apache.cordova.*;
 
