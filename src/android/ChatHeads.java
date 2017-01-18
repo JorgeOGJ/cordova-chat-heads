@@ -15,6 +15,7 @@ public class ChatHeads extends CordovaPlugin {
 	
 	private CallbackContext callbackContext = null;
 	public SettingsFragment settingsfragment = null;
+	public HeadLayer headlayer = null;
 
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -58,10 +59,13 @@ public class ChatHeads extends CordovaPlugin {
 	
 	private void startChatHeads(String message, CallbackContext callbackContext) {
 		this.settingsfragment = new SettingsFragment();
+		this.settingsfragment.externalStartHeadService();
+		callbackContext.success("ChatHeads Service Hopefully Started");
 	}
 	
 	private void openChatHeads(String message, CallbackContext callbackContext) {
-		this.settingsfragment.externalStartHeadService();
+		this.headlayer = new HeadLayer();
+		callbackContext.success("ChatHeads Should be open?");
 	}
 	
 	//private void stopService(String message, CallbackContext callbackContext) {
