@@ -15,4 +15,11 @@ ChatHeads.openHead = function(successCallback, errorCallback){
 	exec(successCallback, errorCallback, "ChatHeads", "openChatHeads", args);
 };
 
+ChatHeads.test = function(successCallback, errorCallback){
+	var testmessage = "This is the test message";
+	console.log("ChatHeads Test");
+	var args = {};
+	exec(successCallback, errorCallback, "ChatHeads", "test", [testmessage]);
+};
+
 module.exports = ChatHeads;

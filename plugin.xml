@@ -14,13 +14,13 @@
 	
     <keywords>cordova,chat,heads</keywords>
 	
-	<asset src="www/ChatHeads.js" target="js/ChatHeads.js"/>
-	
-	<js-module src="www/ChatHeads.js" name="ChatHeads">
-		<clobbers target="ChatHeads" />
-	</js-module>
-	
     <platform name="android">
+	
+		<asset src="www/ChatHeads.js" target="js/ChatHeads.js"/>
+	
+		<js-module src="www/ChatHeads.js" name="ChatHeads">
+			<clobbers target="ChatHeads" />
+		</js-module>
 	
 		<config-file target="AndroidManifest.xml" parent="/*">
 			<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
