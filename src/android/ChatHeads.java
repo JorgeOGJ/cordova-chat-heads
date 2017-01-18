@@ -22,7 +22,7 @@ public class ChatHeads extends CordovaPlugin {
 		String message = args.getString(0);
 		if (action.equals("test")) {
 			//String message = args.getString(0);
-			this.test(message, callbackContext);
+			test(message, callbackContext);
 			return true;
 		}else if (action.equals("open")) {
 			//this.open();
