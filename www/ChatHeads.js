@@ -4,10 +4,12 @@ var argscheck = require('cordova/argscheck'),
 var ChatHeads = {};
 
 ChatHeads.start = function(successCallback, errorCallback){
+	var args = {};
 	exec(successCallback, errorCallback, "ChatHeads", "startChatHeads", args);
 };
 
 ChatHeads.openHead = function(successCallback, errorCallback){
+	var args = {};
 	exec(successCallback, errorCallback, "ChatHeads", "openChatHeads", args);
 };
 
