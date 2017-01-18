@@ -64,7 +64,7 @@ public class ChatHeads extends CordovaPlugin {
 	}
 	
 	private void openChatHeads(String message, CallbackContext callbackContext) {
-		this.headlayer = new HeadLayer();
+		this.headlayer = new HeadLayer(this.cordova.getActivity().getApplicationContext());
 		callbackContext.success("ChatHeads Should be open?");
 	}
 	
