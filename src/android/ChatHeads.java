@@ -14,6 +14,12 @@ import android.content.Intent;
 */
 public class ChatHeads extends CordovaPlugin {
 	
+	@Override
+	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+		super.initialize(cordova, webView);
+		// your init code here
+	}
+	
 	private CallbackContext callbackContext = null;
 	public SettingsFragment settingsfragment = null;
 
