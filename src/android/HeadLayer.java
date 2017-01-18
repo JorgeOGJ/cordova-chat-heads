@@ -1,6 +1,6 @@
 package com.wardman.chatheads;
+import org.apache.cordova.*;
 
-import android.R;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.view.Gravity;
@@ -30,6 +30,10 @@ public class HeadLayer extends View {
 
         addToWindowManager();
     }
+	
+	private int getAppResource(String name, String type) {
+		return cordova.getActivity().getResources().getIdentifier(name, type, cordova.getActivity().getPackageName());
+	}
 
     private void addToWindowManager() {
         final WindowManager.LayoutParams params = new WindowManager.LayoutParams(
@@ -46,10 +50,12 @@ public class HeadLayer extends View {
         LayoutInflater layoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         // Here is the place where you can inject whatever layout you want.
-        layoutInflater.inflate(R.layout.head, mFrameLayout);
+        //layoutInflater.inflate(R.layout.head, mFrameLayout);
+		layoutInflater.inflate(getAppResource("head", "layout"), mFrameLayout);
 
         // Support dragging the image view
-        final ImageView imageView = (ImageView) mFrameLayout.findViewById(R.id.imageView);
+        //final ImageView imageView = (ImageView) mFrameLayout.findViewById(R.id.imageView);
+		final ImageView imageView = (ImageView) mFrameLayout.findViewById(getAppResource("imageView", "id"));
         imageView.setOnTouchListener(new OnTouchListener() {
             private int initX, initY;
             private int initTouchX, initTouchY;

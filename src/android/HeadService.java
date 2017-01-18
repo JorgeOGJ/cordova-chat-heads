@@ -1,6 +1,6 @@
 package com.wardman.chatheads;
+import org.apache.cordova.*;
 
-import android.R;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -17,6 +17,10 @@ public class HeadService extends Service {
     private final static int FOREGROUND_ID = 999;
 
     private HeadLayer mHeadLayer;
+	
+	private int getAppResource(String name, String type) {
+		return cordova.getActivity().getResources().getIdentifier(name, type, cordova.getActivity().getPackageName());
+	}
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -59,11 +63,21 @@ public class HeadService extends Service {
         return PendingIntent.getActivity(this, 0, intent, 0);
     }
 
+	/*
     private Notification createNotification(PendingIntent intent) {
         return new Notification.Builder(this)
                 .setContentTitle(getText(R.string.notificationTitle))
                 .setContentText(getText(R.string.notificationText))
                 .setSmallIcon(R.drawable.ic_launcher)
+                .setContentIntent(intent)
+                .build();
+    }
+	*/
+	private Notification createNotification(PendingIntent intent) {
+        return new Notification.Builder(this)
+                .setContentTitle(getText(getAppResource("notificationTitle", "string")))
+                .setContentText(getText(getAppResource("notificationText", "string")))
+                .setSmallIcon(getAppResource("ic_launcher", "drawable"))
                 .setContentIntent(intent)
                 .build();
     }
