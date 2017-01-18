@@ -1,5 +1,4 @@
 package com.wardman.chatheads;
-import org.apache.cordova.*;
 
 import android.content.Context;
 import android.graphics.PixelFormat;
@@ -32,7 +31,7 @@ public class HeadLayer extends View {
     }
 	
 	private int getAppResource(String name, String type) {
-		return cordova.getActivity().getResources().getIdentifier(name, type, cordova.getActivity().getPackageName());
+		return mContext.getActivity().getResources().getIdentifier(name, type, mContext.getActivity().getPackageName());
 	}
 
     private void addToWindowManager() {
